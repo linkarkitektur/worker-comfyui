@@ -6,9 +6,12 @@ services:
       resources:
         reservations:
           devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
+           - driver: cdi
+             device_ids: ['nvidia.com/gpu=all']
+             capabilities: [compute, utility]
+#             - driver: nvidia
+#               count: all
+#               capabilities: [gpu]
     environment:
       - SERVE_API_LOCALLY=true
     ports:
