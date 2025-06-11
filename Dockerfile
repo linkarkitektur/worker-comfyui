@@ -53,7 +53,8 @@ ADD src/extra_model_paths.yaml ./
 WORKDIR /
 
 # Install Python runtime dependencies for the handler
-RUN uv pip install runpod requests websocket-client
+COPY pyproject.toml poetry.lock ./
+RUN uv pip install -r pyproject.toml
 
 # Add application code and scripts
 ADD src/start.sh handler.py ./

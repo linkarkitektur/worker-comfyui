@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "worker-comfyui"
+version = "0.1.0"
+description = ""
+authors = ["pfmephisto <22501790+pfmephisto@users.noreply.github.com>"]
+# readme = "README.md"
+# license = "BSD"
+packages = [
+  { include = "src" },
+  { include = "tests" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+runpod = "^1.7.10"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
